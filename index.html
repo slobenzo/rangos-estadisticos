@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Rangos Estadísticos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dark-mode-toggle">
+        <button id="toggle-dark-mode" onclick="toggleDarkMode()">Modo Oscuro</button>
+    </div>
+    <div class="container">
+        <h1>Rangos Estadísticos</h1>
+        
+        <div class="input-group">
+            <label for="rangoBase">Rango Base</label>
+            <input type="number" id="rangoBase" oninput="calcularRangos()">
+        </div>
+        
+        <div id="rangos" class="oculto">
+            <div class="input-group">
+                <label for="rangoMaximo">Rango Máximo</label>
+                <input type="number" id="rangoMaximo" readonly>
+            </div>
+            
+            <div class="input-group">
+                <label for="rangoMinimo">Rango Mínimo</label>
+                <input type="number" id="rangoMinimo" readonly>
+            </div>
+
+            <button class="reiniciar-btn" onclick="reiniciar()">
+                <span class="icon-reiniciar">🔄</span>
+            </button>
+
+            <div class="input-group nuevo-rango-group">
+                <label for="nuevoRango">Rango a Comparar</label>
+                <input type="number" id="nuevoRango" oninput="verificarRango()">
+                <p id="resultadoVerificacion"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
